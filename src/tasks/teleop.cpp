@@ -68,11 +68,18 @@ void opcontrol() {
     Controller controller(pros::E_CONTROLLER_MASTER);
 
     while (true) {
-        pros::lcd::print(0, "Battery: %2.3f V", pros::battery::get_voltage() / 1000.0f);
+        lcd::print(0, "X: %f", drivebase->getPose().x);
+        lcd::print(1, "Y: %f", drivebase->getPose().y);
+        lcd::print(2, "Theta: %f", drivebase->getPose().theta);
+        lcd::print(3, "IMU: %f", drivebase->getIMU().get_heading());
+        controller.print(0, 0, "Theta: %f", drivebase->getPose().theta);
+
 
         drivebase_controls(controller);
         intake_controls(controller);
         clamp_controls(controller);
+        conveyor_controls(controller);
+        arm_controls(controller);
 
         pros::delay(constants::TELEOP_POLL_TIME);
     }

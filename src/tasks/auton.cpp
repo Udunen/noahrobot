@@ -26,16 +26,16 @@ inline constexpr AutonMode MODE = AutonMode::TEST;
 
 void autonomousTest()
 {
-    drivebase->moveToPoint(0, 36, 5000, {}, false); // for calibrating lateral PID
+    drivebase->moveToPoint(0, 24, 5000, {}, false); // for calibrating lateral PID
+    // drivebase->turnToHeading(180, 2500, {}, false); // for calibrating angular PID
 
     pros::delay(100);
     lcd::print(0, "X: %f", drivebase->getPose().x);
     lcd::print(1, "Y: %f", drivebase->getPose().y);
     lcd::print(2, "Theta: %f", drivebase->getPose().theta);
+    lcd::print(3, "IMU: %f", drivebase->getIMU().get_heading());
 
     pros::delay(3000);
-
-    // drivebase->turnToHeading(180, 5000); // for calibrating angular PID
 }
 
 void autonomousSkills(){}

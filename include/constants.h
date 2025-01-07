@@ -26,7 +26,7 @@ namespace constants
             13
         };
 
-        inline constexpr double DRIVETRAIN_WIDTH = 12;
+        inline constexpr double DRIVETRAIN_WIDTH = 14.59375;
         inline constexpr int IMU_PORT = 5;
 
         inline constexpr auto CHASSIS_INTERNAL_GEARSET = pros::v5::MotorGears::green;
@@ -46,14 +46,14 @@ namespace constants
 
         // angular PID controller
         inline const lemlib::ControllerSettings ANGULAR_CONTROLLER(
-            10, // proportional gain (kP) - 10/12
-            0, // integral gain (kI)
-            75,// derivative gain (kD) - 75/80
-            3, // 3, // anti windup
-            1, // 1, // small error range, in degrees
-            100, // 100, // small error range timeout, in milliseconds
-            3, // 3, // large error range, in degrees
-            500, // 500, // large error range timeout, in milliseconds
+            11, // proportional gain (kP) - 10
+            2, // i0ntegral gain (kI)
+            90,// derivative gain (kD) - 75
+            3, // anti windup
+            3, // small error range, in degrees
+            100, // small error range timeout, in milliseconds
+            5, // large error range, in degrees
+            500, // large error range timeout, in milliseconds
             0  // maximum acceleration (slew)
         );
 
@@ -110,6 +110,7 @@ namespace constants
         inline constexpr auto ARM_INTERNAL_GEARSET = pros::v5::MotorGears::red;
         inline constexpr int ARM_VOLTAGE = 12000; // mV
         inline constexpr int ROTATION_SENSOR_PORT = 10;
+        inline constexpr auto ARM_BRAKE_MODE = pros::MotorBrake::hold;
     }
 
     namespace clamp
