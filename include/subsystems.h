@@ -17,7 +17,6 @@ inline Conveyor *conveyor = nullptr;
 inline void subsystems_initialize()
 {
     drivebase = new Drivebase();
-    drivebase->calibrateChassis(false);
     intake = new Intake();
     arm = new Arm();
     clamp = new Clamp();

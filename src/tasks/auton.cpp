@@ -26,8 +26,13 @@ inline constexpr AutonMode MODE = AutonMode::TEST;
 
 void autonomousTest()
 {
-    drivebase->moveToPoint(0, 12, 5000, {}, false); // for calibrating lateral PID
+    drivebase->moveToPoint(0, 24, 5000, {}, false); // for calibrating lateral PID
     // drivebase->turnToHeading(180, 2500, {}, false); // for calibrating angular PID
+
+    // drivebase->moveToPoint(0, 24, DEFAULT_TIMEOUT);
+    // drivebase->turnThenMoveToPoint(-24, 0);
+    // drivebase->turnThenMoveToPoint(0, 0);
+    // drivebase->turnToHeading(0, DEFAULT_TIMEOUT);
 
     pros::delay(100);
     lcd::print(0, "X: %f", drivebase->getPose().x);
@@ -38,7 +43,9 @@ void autonomousTest()
     pros::delay(3000);
 }
 
-void autonomousSkills(){}
+void autonomousSkills(){
+
+}
 
 void autonomousVS(){}
 

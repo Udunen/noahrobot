@@ -72,7 +72,7 @@ void opcontrol() {
         lcd::print(1, "Y: %f", drivebase->getPose().y);
         lcd::print(2, "Theta: %f", drivebase->getPose().theta);
         lcd::print(3, "IMU: %f", drivebase->getIMU().get_heading());
-        controller.print(0, 0, "Theta: %f", drivebase->getPose().theta);
+        controller.print(0, 0, "X: %f", drivebase->getPose().y);
 
 
         drivebase_controls(controller);
