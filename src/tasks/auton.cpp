@@ -26,7 +26,7 @@ inline constexpr AutonMode MODE = AutonMode::TEST;
 
 void autonomousTest()
 {
-    drivebase->moveToPoint(0, 24, 5000, {}, false); // for calibrating lateral PID
+    drivebase->moveToPoint(0, 12, 5000, {}, false); // for calibrating lateral PID
     // drivebase->turnToHeading(180, 2500, {}, false); // for calibrating angular PID
 
     pros::delay(100);
