@@ -7,7 +7,9 @@
 
 using namespace pros;
 
-void opcontrol_initialize() {}
+void opcontrol_initialize() {
+    arm->set_brake_mode(constants::arm::ARM_BRAKE_MODE);
+}
 
 static void drivebase_controls(Controller &controller) {
     drivebase->errorDrive(
