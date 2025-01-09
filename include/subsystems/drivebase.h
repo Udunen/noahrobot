@@ -2,6 +2,7 @@
 #define __SUBSYSTEMS_DRIVEBASE_H__
 
 #include "constants.h"
+#include "pros/vision.hpp"
 #include <cmath>
 
 using namespace constants::drivebase;
@@ -20,6 +21,7 @@ class Drivebase : public lemlib::Chassis
     }
 
     pros::IMU getIMU() { return IMU; }
+    pros::Vision getVision() { return vision; }
 
     void errorDrive(float drive, float turn)
     {
@@ -48,6 +50,10 @@ class Drivebase : public lemlib::Chassis
       while (isInMotion()) {
         pros::delay(interval);
       }
+    }
+
+    void aimAtRing() {
+      
     }
 };
 
